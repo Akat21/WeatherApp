@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app{
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.weather-display-container,
+.info-container{
+    height: 100%;
+}
+
+.weather-display-container{
+    position: relative;
+    flex: 3;
+}
+
+.display{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    align-items: center;
+    height: 50%;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: 'Overpass', sans-serif;
+    user-select: none;
+}
+
+.display h1{
+    font-size: 120px;
+}
+
+.location-details{
+    margin-left: 3vh;
+    margin-right: 3vh;
+}
+
+.location-details h2{
+    font-size: 60px;
+}
+
+.location-details p{
+    font-size: 20px
+}
+
+img{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    z-index: -10;
+    filter: brightness(0.75);
+}
+
+.info-container{
+    flex: 2;
+    opacity: 0.99;
+    backdrop-filter: brightness(0.7) blur(50px);
+}
+
+.info-container hr{
+    width: auto;
+    justify-content: center;
+    margin-left: 10vh;
+    margin-right: 10vh;
+    margin-top: -4vh;
+}
+
+.search-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 8vh;
+    margin-left: 10vh;
+    margin-right: 10vh;
+}
+
+.search-container input,
+.search-container button{
+    width: 70%;
+    height: 5vh;
+    font-size: 16px;
+    color: white;
+    background: none;
+    border: 0px;
+    opacity: 0.6;
+}
+
+.search-container input{
+    margin-bottom: 6vh;
+    border-bottom: 1px solid white;
+}
+
+.search-container input:focus{
+    outline: none;
+}
+
+.search-container button{
+    text-align: left;
+    margin-bottom: 3vh;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.search-container button:hover{
+    font-size: 20px;
+}
+
+.details-container{
+    color:white;
+    margin: 8vh;
+    margin-left: 10vh;
+    margin-right: 10vh;
+    font-weight: 500;
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+    user-select: none;
+}
+
+.details-container p{
+    margin-top: -2vh;
+    margin-bottom: 6vh;
+}
+
+.detail-param{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 3vh;
+}
+
+.detail-param h2{
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Rubik', sans-serif;
+}
+
+.param{
+    opacity: 0.6;
+}

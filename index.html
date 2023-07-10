@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@500&family=Rubik:wght@300;400&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <div class="app">
+        <img src="./assets/rainy.jpg" alt="rainy">
+        <div class="weather-display-container">
+            <div class="display">
+                <h1>08&deg;</h1>
+                <div class="location-details">
+                    <h2>London</h2>
+                    <p>06.09-Sunday 6 Oct 19</p>
+                </div>
+                <i></i>
+            </div>
+        </div>
+        <div class="info-container">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search your location">
+                <button>Warszawa</button>
+                <button>Poznań</button>
+                <button>London</button>
+                <button>Paris</button>
+            </div>
+            <hr>
+            <div class="details-container">
+                <p>Weather Details</p>
+                <div class="detail-param">
+                    <h2 class="param">Cloudy</h2>
+                    <h2 class="val">82%</h2>
+                </div>
+                <div class="detail-param">
+                    <h2 class="param">Humidity</h2>
+                    <h2 class="val">52%</h2>
+                </div>
+                <div class="detail-param">
+                    <h2 class="param">Wind</h2>
+                    <h2 class="val">7mph</h2>
+                </div>
+                <div class="detail-param">
+                    <h2 class="param">Rain</h2>
+                    <h2 class="val">7mm</h2>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+
+    <script src="./App.js"></script>
+</body>
+</html>
