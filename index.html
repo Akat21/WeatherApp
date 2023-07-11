@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@500&family=Rubik:wght@300;400&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@500&family=Rubik:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script> 
 </head>
 <body>
     <div class="app">
@@ -25,10 +27,7 @@
         <div class="info-container">
             <div class="search-container">
                 <input type="text" class="search-input" placeholder="Search your location">
-                <button>Warszawa</button>
-                <button>Poznań</button>
-                <button>London</button>
-                <button>Paris</button>
+                <div class="search-autocomplete"></div>
             </div>
             <hr>
             <div class="details-container">
@@ -54,6 +53,6 @@
         </div>
     </div>
 
-    <script src="./App.js"></script>
+    <script type="module" src="./App.js"></script>
 </body>
 </html>

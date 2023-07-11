@@ -80,6 +80,7 @@ img{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    height: 43vh;
     margin: 8vh;
     margin-left: 10vh;
     margin-right: 10vh;
@@ -110,6 +111,8 @@ img{
     margin-bottom: 3vh;
     cursor: pointer;
     transition: all 0.5s ease;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .search-container button:hover{
