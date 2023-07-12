@@ -19,7 +19,14 @@ const App = () =>{
             
             //Set Data
             if (weatherData[Object.keys(weatherData)]){
-                document.querySelector('.location-details h2').textContent = Object.keys(weatherData)
+                const title = document.querySelector('.location-details h2')
+                if (Object.keys(weatherData)[0].length < 15){
+                    title.style.fontSize = `60px`
+                    title.textContent = Object.keys(weatherData)
+                } else {
+                    title.style.fontSize = `30px`
+                    title.textContent = Object.keys(weatherData)
+                }
                 const date = new Date(weatherData[Object.keys(weatherData)].values[0].datetime)
                 const temp = Math.floor((5/9) * (weatherData[Object.keys(weatherData)].values[0].temp - 32))
                 const icon = weatherData[Object.keys(weatherData)].currentConditions.icon
@@ -50,6 +57,12 @@ const App = () =>{
                 throw new Error(`HTTP Error! Status: ${response.status}`)
             }
             const data = await response.json()
+            //Delete Previous Data
+            while (searchDiv.firstChild) {
+                searchDiv.removeChild(searchDiv.firstChild);
+            }
+
+            //Fetch New Data
             availableCities = [...new Set(data.features.map((city) =>{
                 return city.properties.city
             }).filter(city => city !== undefined).slice(0,4))]
@@ -59,16 +72,12 @@ const App = () =>{
     }
 
     //Search city 
-    searchInput.addEventListener('input', function(event){
-        //Clear the buttons
-        while (searchDiv.firstChild) {
-            searchDiv.removeChild(searchDiv.firstChild);
-        }
+    searchInput.addEventListener('input', async function(event){
 
-        //Search for Weather and Cities 
+        //Search for Cities 
         const searchText = event.target.value;
         if(searchText.length > 0){
-            fetchCities(`${searchText}&apiKey=${API_CITIES_KEY}`)
+           await fetchCities(`${searchText}&apiKey=${API_CITIES_KEY}`)
         } else { 
             availableCities = []
         }
@@ -79,7 +88,7 @@ const App = () =>{
             button.textContent = availableCities[idx]
             searchDiv.appendChild(button)
         })
-
+        
         //Choose of City
         const cityBtns = document.querySelectorAll('.search-autocomplete button')
         cityBtns.forEach((btn) =>{
