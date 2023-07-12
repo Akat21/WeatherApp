@@ -18,22 +18,24 @@ const App = () =>{
             weatherData = {...data.locations}
             
             //Set Data
-            document.querySelector('.location-details h2').textContent = Object.keys(weatherData)
-            const date = new Date(weatherData[Object.keys(weatherData)].values[0].datetime)
-            const temp = Math.floor((5/9) * (weatherData[Object.keys(weatherData)].values[0].temp - 32))
-            const icon = weatherData[Object.keys(weatherData)].currentConditions.icon
-            const cloudCover = Math.floor(weatherData[Object.keys(weatherData)].values[0].cloudcover)
-            const humidity = Math.floor(weatherData[Object.keys(weatherData)].values[0].humidity)
-            const wind = Math.floor(weatherData[Object.keys(weatherData)].values[0].wspd)
-            const rain = weatherData[Object.keys(weatherData)].values[0].precip
-            document.querySelector('.location-details p').textContent = date.toLocaleDateString('en-US', dateOptions)
-            document.querySelector('.display h1').textContent = `${temp}\u00B0`
-            document.querySelector('.display img').src = `./assets/SVG/1st Set - Color/${icon}.svg`
-            document.querySelector('.detail-param-cloudy .val').textContent = `${cloudCover}%`
-            document.querySelector('.detail-param-humidity .val').textContent = `${humidity}%`
-            document.querySelector('.detail-param-wind .val').textContent = `${wind} km/h`
-            document.querySelector('.detail-param-rain .val').textContent = `${rain} mm`
-
+            if (weatherData[Object.keys(weatherData)]){
+                document.querySelector('.location-details h2').textContent = Object.keys(weatherData)
+                const date = new Date(weatherData[Object.keys(weatherData)].values[0].datetime)
+                const temp = Math.floor((5/9) * (weatherData[Object.keys(weatherData)].values[0].temp - 32))
+                const icon = weatherData[Object.keys(weatherData)].currentConditions.icon
+                const cloudCover = Math.floor(weatherData[Object.keys(weatherData)].values[0].cloudcover)
+                const humidity = Math.floor(weatherData[Object.keys(weatherData)].values[0].humidity)
+                const wind = Math.floor(weatherData[Object.keys(weatherData)].values[0].wspd)
+                const rain = weatherData[Object.keys(weatherData)].values[0].precip
+                document.querySelector('.location-details p').textContent = date.toLocaleDateString('en-US', dateOptions)
+                document.querySelector('.display h1').textContent = `${temp}\u00B0`
+                document.querySelector('.display img').src = icon ? `./assets/SVG/1st Set - Color/${icon}.svg` : document.querySelector('.display img').src
+                document.querySelector('.background-img').src = icon ? `./assets/JPG/${icon}.jpg` :  document.querySelector('.background-img').src
+                document.querySelector('.detail-param-cloudy .val').textContent = `${cloudCover}%`
+                document.querySelector('.detail-param-humidity .val').textContent = `${humidity}%`
+                document.querySelector('.detail-param-wind .val').textContent = `${wind} km/h`
+                document.querySelector('.detail-param-rain .val').textContent = `${rain} mm`
+            }
         } catch(err) {
             console.error(err)
         }
