@@ -36,8 +36,8 @@ const App = () =>{
                 const rain = weatherData[Object.keys(weatherData)].values[0].precip
                 document.querySelector('.location-details p').textContent = date.toLocaleDateString('en-US', dateOptions)
                 document.querySelector('.display h1').textContent = `${temp}\u00B0`
-                document.querySelector('.display img').src = icon ? `./assets/SVG/1st Set - Color/${icon}.svg` : document.querySelector('.display img').src
-                document.querySelector('.background-img').src = icon ? `./assets/JPG/${icon}.jpg` :  document.querySelector('.background-img').src
+                document.querySelector('.display img').src = icon ? `assets/SVG/1st Set - Color/${icon}.svg` : document.querySelector('.display img').src
+                document.querySelector('.background-img').src = icon ? `assets/JPG/${icon}.JPG` :  document.querySelector('.background-img').src
                 document.querySelector('.detail-param-cloudy .val').textContent = `${cloudCover}%`
                 document.querySelector('.detail-param-humidity .val').textContent = `${humidity}%`
                 document.querySelector('.detail-param-wind .val').textContent = `${wind} km/h`
