@@ -55,7 +55,7 @@
 }
 
 .location-details h2{
-    font-size: 60px;
+    font-size: 10vh;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
@@ -161,9 +161,62 @@
 .details-container h2{
     font-size: 18px;
     font-weight: 400;
+    margin-right: 1vh;
     font-family: 'Rubik', sans-serif;
 }
 
 .param{
     opacity: 0.6;
 }
+
+@media screen and (max-width: 700px){
+   .details-container h2{
+        font-size: 15px;
+        margin-right: 4vh;
+   }
+
+    .info-container{
+        width: 40%;
+   }
+
+   .search-container,
+   .details-container,
+   .info-container hr{
+        margin-left: 2vh;
+        margin-right: 2vh;
+    }
+
+    .search-container{
+        overflow: hidden;
+    }
+   .search-container input,
+   .search-container button{
+        width: 100%;
+   }
+
+   .display{
+        flex-direction: column;
+   }
+
+   .location-details h2{
+        font-size: 12px;
+    }
+
+    .display img{
+        display: none;
+    }
+
+    .display h1{
+        font-size: 100px;
+        margin-left: 2vh;
+    }
+
+    .display h2{
+        font-size: 5vh;
+    }
+
+    .location-details p{
+        font-size: 16px;
+    
+    }
+  }
